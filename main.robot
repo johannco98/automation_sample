@@ -15,6 +15,8 @@ Resource    Screens/finish_screen_keywords.robot
 #Determines na kumukuha tayo ng data sa excel
 Test Template    ExcelData
 
+#Sample test for branch change
+
 *** Test Cases ***
 Test sample run    ${username}    ${password}    
 ...    ${first_name}	${last_name}	${zip_code}    
