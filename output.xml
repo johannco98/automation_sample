@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-03-15T14:03:02.730992" rpa="false" schemaversion="5">
+<suite id="s1" name="Main" source="c:\Users\Johann\Desktop\Autiomation Testing\main.robot">
+<test id="s1-t1" name="Test sample run" line="19">
+<kw name="ExcelData">
+<kw name="Begin webtest" owner="browser">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-15T14:03:05.765474" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/v1/'.</msg>
+<msg time="2025-03-15T14:03:06.704876" level="WARN">The chromedriver version (133.0.6943.98) detected in PATH at chromedriver.EXE might not be compatible with the detected chrome version (134.0.6998.89); currently, chromedriver 134.0.6998.88 is recommended for chrome 134.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${website_link}</arg>
+<arg>${webdriver_1}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-15T14:03:05.765144" elapsed="4.138235"/>
+</kw>
+<status status="PASS" start="2025-03-15T14:03:05.764485" elapsed="4.139231"/>
+</kw>
+<kw name="Validate username textfield" owner="login_screen_keywords">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${username_txtfield}</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-15T14:03:09.904388" elapsed="0.012406"/>
+</kw>
+<status status="PASS" start="2025-03-15T14:03:09.904005" elapsed="0.013027"/>
+</kw>
+<kw name="Validate password textfield" owner="login_screen_keywords">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${password_txtfield}</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-15T14:03:09.917639" elapsed="0.008093"/>
+</kw>
+<status status="PASS" start="2025-03-15T14:03:09.917280" elapsed="0.008640"/>
+</kw>
+<kw name="Input username in username textfield" owner="login_screen_keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-15T14:03:09.926784" level="INFO">Typing text 'standard_user' into text field '//input[@id="user-name"]'.</msg>
+<arg>${username_txtfield}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-15T14:03:09.926527" elapsed="0.062045"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2025-03-15T14:03:09.926131" elapsed="0.062668"/>
+</kw>
+<kw name="Input password in password textfield" owner="login_screen_keywords">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-03-15T14:03:09.989630" level="INFO">Typing password into text field '//input[@id="password"]'.</msg>
+<msg time="2025-03-15T14:03:10.007159" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${password_txtfield}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-15T14:03:09.989409" elapsed="0.047296"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-03-15T14:03:09.989038" elapsed="0.047860"/>
+</kw>
+<kw name="Click login button" owner="login_screen_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-15T14:03:10.037515" level="INFO">Clicking element '//input[@id="login-button"]'.</msg>
+<arg>${login_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-15T14:03:10.037328" elapsed="0.905311"/>
+</kw>
+<status status="PASS" start="2025-03-15T14:03:10.037077" elapsed="0.905739"/>
+</kw>
+<kw name="Validate dashboard header" owner="dashboard_screen_keywords">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${products_page}</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-15T14:03:10.943322" elapsed="0.008510"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-15T14:03:10.967260" level="INFO">${actual_text} = Products</msg>
+<var>${actual_text}</var>
+<arg>${products_page}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-15T14:03:10.952219" elapsed="0.015478"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${actual_text}</arg>
+<arg>${product_page_expected_header}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-03-15T14:03:10.967895" elapsed="0.000279"/>
+</kw>
+<arg>${product_page_expected_header}</arg>
+<status status="PASS" start="2025-03-15T14:03:10.943008" elapsed="0.025282"/>
+</kw>
+<kw name="Click to add item to cart" owner="dashboard_screen_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-15T14:03:10.968966" level="INFO">Clicking element '(//button[@class="btn_primary btn_inventory"])[1]'.</msg>
+<arg>${add_to_cart}${index}]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-15T14:03:10.968719" elapsed="0.041926"/>
+</kw>
+<arg>${add_to_cart_index}</arg>
+<status status="PASS" start="2025-03-15T14:03:10.968438" elapsed="0.042504"/>
+</kw>
+<kw name="Click to add item to cart" owner="dashboard_screen_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-15T14:03:11.012028" level="INFO">Clicking element '(//button[@class="btn_primary btn_inventory"])[1]'.</msg>
+<arg>${add_to_cart}${index}]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-15T14:03:11.011767" elapsed="0.035920"/>
+</kw>
+<arg>${add_to_cart_index}</arg>
+<status status="PASS" start="2025-03-15T14:03:11.011300" elapsed="0.036705"/>
+</kw>
+<kw name="Click to add item to cart" owner="dashboard_screen_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-15T14:03:11.049264" level="INFO">Clicking element '(//button[@class="btn_primary btn_inventory"])[1]'.</msg>
+<arg>${add_to_cart}${index}]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-15T14:03:11.048823" elapsed="0.035526"/>
+</kw>
+<arg>${add_to_cart_index}</arg>
+<status status="PASS" start="2025-03-15T14:03:11.048331" elapsed="0.036218"/>
+</kw>
+<kw name="Click to add item to cart" owner="dashboard_screen_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-15T14:03:11.085494" level="INFO">Clicking element '(//button[@class="btn_primary btn_inventory"])[1]'.</msg>
+<arg>${add_to_cart}${index}]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-15T14:03:11.085221" elapsed="0.034503"/>
+</kw>
+<arg>${add_to_cart_index}</arg>
+<status status="PASS" start="2025-03-15T14:03:11.084826" elapsed="0.035085"/>
+</kw>
+<kw name="Click to add item to cart" owner="dashboard_screen_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-15T14:03:11.120651" level="INFO">Clicking element '(//button[@class="btn_primary btn_inventory"])[1]'.</msg>
+<arg>${add_to_cart}${index}]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-15T14:03:11.120447" elapsed="0.035480"/>
+</kw>
+<arg>${add_to_cart_index}</arg>
+<status status="PASS" start="2025-03-15T14:03:11.120113" elapsed="0.036008"/>
+</kw>
+<kw name="Click to add item to cart" owner="dashboard_screen_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-15T14:03:11.156960" level="INFO">Clicking element '(//button[@class="btn_primary btn_inventory"])[1]'.</msg>
+<arg>${add_to_cart}${index}]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-15T14:03:11.156731" elapsed="0.033739"/>
+</kw>
+<arg>${add_to_cart_index}</arg>
+<status status="PASS" start="2025-03-15T14:03:11.156345" elapsed="0.034302"/>
+</kw>
+<kw name="Click shopping cart" owner="dashboard_screen_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-15T14:03:11.191568" level="INFO">Clicking element '//*[@id="shopping_cart_container"]'.</msg>
+<arg>${shopping_cart}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-15T14:03:11.191331" elapsed="0.351666"/>
+</kw>
+<status status="PASS" start="2025-03-15T14:03:11.190984" elapsed="0.352224"/>
+</kw>
+<kw name="Validate user cart header" owner="user_cart_screen_keywords">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${user_cart}</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-15T14:03:11.543869" elapsed="0.012607"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-15T14:03:11.567597" level="INFO">${actual_text} = Your Cart</msg>
+<var>${actual_text}</var>
+<arg>${user_cart}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-15T14:03:11.556769" elapsed="0.011796"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${actual_text}</arg>
+<arg>${cart_expected_header}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-03-15T14:03:11.568999" elapsed="0.000511"/>
+</kw>
+<arg>${cart_expected_header}</arg>
+<status status="PASS" start="2025-03-15T14:03:11.543455" elapsed="0.026295"/>
+</kw>
+<kw name="Click checkout button" owner="user_cart_screen_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-15T14:03:11.571148" level="INFO">Clicking element '//*[@id="cart_contents_container"]/div/div[2]/a[2]'.</msg>
+<arg>${checkout_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-15T14:03:11.570776" elapsed="0.343897"/>
+</kw>
+<status status="PASS" start="2025-03-15T14:03:11.570269" elapsed="0.344665"/>
+</kw>
+<kw name="Validate checkout information header" owner="checkout_information_screen_keywords">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${checkout_information}</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-15T14:03:11.915833" elapsed="0.011160"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-15T14:03:11.950939" level="INFO">${actual_text} = Checkout: Your Information</msg>
+<var>${actual_text}</var>
+<arg>${checkout_information}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-15T14:03:11.927241" elapsed="0.024224"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${actual_text}</arg>
+<arg>${checkout_info_expected_header}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-03-15T14:03:11.951721" elapsed="0.000301"/>
+</kw>
+<arg>${checkout_info_expected_header}</arg>
+<status status="PASS" start="2025-03-15T14:03:11.915270" elapsed="0.036881"/>
+</kw>
+<kw name="Validate first name textfield" owner="checkout_information_screen_keywords">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${firstname_txtfield}</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-15T14:03:11.952683" elapsed="0.009874"/>
+</kw>
+<status status="PASS" start="2025-03-15T14:03:11.952341" elapsed="0.010451"/>
+</kw>
+<kw name="Validate last name textfield" owner="checkout_information_screen_keywords">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${lastname_txtfield}</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-15T14:03:11.963298" elapsed="0.007822"/>
+</kw>
+<status status="PASS" start="2025-03-15T14:03:11.963005" elapsed="0.008590"/>
+</kw>
+<kw name="Validate zip codetextfield" owner="checkout_information_screen_keywords">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${zipcode_txtfield}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-15T14:03:11.972325" elapsed="0.010783"/>
+</kw>
+<status status="PASS" start="2025-03-15T14:03:11.971906" elapsed="0.011487"/>
+</kw>
+<kw name="Input first name in first name textfield" owner="checkout_information_screen_keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-15T14:03:11.984802" level="INFO">Typing text 'Johann' into text field '//input[@id="first-name"]'.</msg>
+<arg>${firstname_txtfield}</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-15T14:03:11.984487" elapsed="0.059546"/>
+</kw>
+<arg>${first_name}</arg>
+<status status="PASS" start="2025-03-15T14:03:11.983974" elapsed="0.060334"/>
+</kw>
+<kw name="Input last name in last name textfield" owner="checkout_information_screen_keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-15T14:03:12.045173" level="INFO">Typing text 'Co' into text field '//input[@id="last-name"]'.</msg>
+<arg>${lastname_txtfield}</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-15T14:03:12.044940" elapsed="0.046005"/>
+</kw>
+<arg>${last_name}</arg>
+<status status="PASS" start="2025-03-15T14:03:12.044570" elapsed="0.046547"/>
+</kw>
+<kw name="Input zip code in zip code textfield" owner="checkout_information_screen_keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-15T14:03:12.091883" level="INFO">Typing text '114324' into text field '//input[@id="postal-code"]'.</msg>
+<arg>${zipcode_txtfield}</arg>
+<arg>${zip_code}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-15T14:03:12.091690" elapsed="0.055444"/>
+</kw>
+<arg>${zip_code}</arg>
+<status status="PASS" start="2025-03-15T14:03:12.091293" elapsed="0.056119"/>
+</kw>
+<kw name="Click continue button in checkout screen" owner="checkout_information_screen_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-15T14:03:12.148503" level="INFO">Clicking element '//*[@id="checkout_info_container"]/div/form/div[2]/input'.</msg>
+<arg>${checkout_continue_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-15T14:03:12.148181" elapsed="0.353817"/>
+</kw>
+<status status="PASS" start="2025-03-15T14:03:12.147697" elapsed="0.354525"/>
+</kw>
+<kw name="Validate checkout overview header" owner="checkout_overview_sceen_keywords">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${checkout_overview}</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-15T14:03:12.503117" elapsed="0.017486"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-15T14:03:12.534528" level="INFO">${actual_text} = Checkout: Overview</msg>
+<var>${actual_text}</var>
+<arg>${checkout_overview}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-15T14:03:12.521061" elapsed="0.013932"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${actual_text}</arg>
+<arg>${checkout_overview_expected_header}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-03-15T14:03:12.535231" elapsed="0.000333"/>
+</kw>
+<arg>${checkout_overview_expected_header}</arg>
+<status status="PASS" start="2025-03-15T14:03:12.502539" elapsed="0.033203"/>
+</kw>
+<kw name="Click finish button in overview screen" owner="checkout_overview_sceen_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-15T14:03:12.537164" level="INFO">Clicking element '//*[@id="checkout_summary_container"]/div/div[2]/div[8]/a[2]'.</msg>
+<arg>${finish_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-15T14:03:12.536811" elapsed="0.607771"/>
+</kw>
+<status status="PASS" start="2025-03-15T14:03:12.536161" elapsed="0.608917"/>
+</kw>
+<kw name="Validate finish screen header" owner="finish_screen_keywords">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${tnx_msg}</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-15T14:03:13.145672" elapsed="0.006068"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-15T14:03:13.164836" level="INFO">${actual_text} = Finish</msg>
+<var>${actual_text}</var>
+<arg>${tnx_msg}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-15T14:03:13.152023" elapsed="0.013296"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${actual_text}</arg>
+<arg>${finish_expected_header}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-03-15T14:03:13.165593" elapsed="0.000354"/>
+</kw>
+<arg>${finish_expected_header}</arg>
+<status status="PASS" start="2025-03-15T14:03:13.145289" elapsed="0.020848"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-15T14:03:14.167200" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-15T14:03:13.166434" elapsed="1.001377"/>
+</kw>
+<arg>username=standard_user</arg>
+<arg>password=secret_sauce</arg>
+<arg>first_name=Johann</arg>
+<arg>last_name=Co</arg>
+<arg>zip_code=114324</arg>
+<arg>add_to_cart_index=1</arg>
+<arg>product_page_expected_header=Products</arg>
+<arg>cart_expected_header=Your Cart</arg>
+<arg>checkout_info_expected_header=Checkout: Your Information</arg>
+<arg>checkout_overview_expected_header=Checkout: Overview</arg>
+<arg>finish_expected_header=Finish</arg>
+<status status="PASS" start="2025-03-15T14:03:05.763558" elapsed="8.404426"/>
+</kw>
+<status status="PASS" start="2025-03-15T14:03:05.762305" elapsed="8.406270"/>
+</test>
+<status status="PASS" start="2025-03-15T14:03:02.735213" elapsed="11.434669"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Main" id="s1" pass="1" fail="0" skip="0">Main</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-03-15T14:03:03.065717" level="WARN">Imported resource file 'c:\Users\Johann\Desktop\Autiomation Testing\Utils\testdata.robot' is empty.</msg>
+<msg time="2025-03-15T14:03:06.704876" level="WARN">The chromedriver version (133.0.6943.98) detected in PATH at chromedriver.EXE might not be compatible with the detected chrome version (134.0.6998.89); currently, chromedriver 134.0.6998.88 is recommended for chrome 134.*, so it is advised to delete the driver in PATH and retry</msg>
+</errors>
+</robot>
